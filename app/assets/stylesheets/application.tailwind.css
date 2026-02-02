@@ -1,0 +1,39 @@
+@import "tailwindcss";
+.top-container {
+  text-align: center;
+}
+
+.top-container h1 {
+  margin-top: 250px;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.top-container .subtitle {
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.start-button {
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 40px;
+  padding: 30px 58px;
+  background-color: #04a24bde;
+  color: #ebf3ef;
+  text-decoration: none;
+  border-radius: 100px;
+  font-size: 26px;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(14, 1, 1, 0.15)
+}
+
+.start-button:hover {
+  background-color: #038a40;
+  transform: translateY(-3px);
+}
+
+body {
+  background-color: #f3faf6;
+}
+
