@@ -1,39 +1,97 @@
 @import "tailwindcss";
-.top-container {
+/* =========================
+   全画面 共通背景
+========================= */
+.app-bg {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f5faf7 0%, #eaf6f0 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   中央コンテンツ
+========================= */
+.app-container {
   text-align: center;
+  width: 100%;
+  max-width: 720px;
+  padding: 40px 20px;
 }
 
-.top-container h1 {
-  margin-top: 250px;
-  font-size: 50px;
+/* =========================
+   見出し（質問文）
+========================= */
+.app-title {
+  margin-bottom: 64px;
+  font-size: 42px;
   font-weight: 600;
+  color: #1f2937; /* text-gray-800 */
+  line-height: 1.4;
 }
 
-.top-container .subtitle {
-  margin-top: 20px;
-  font-size: 30px;
-}
-
-.start-button {
-  transition: all 0.3s ease;
+/* =========================
+   共通ボタン
+========================= */
+.app-button {
+  transition: all 0.25s ease;
   display: inline-block;
-  margin-top: 40px;
-  padding: 30px 58px;
+  padding: 28px 56px;
   background-color: #04a24bde;
   color: #ebf3ef;
   text-decoration: none;
   border-radius: 100px;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 600;
-  box-shadow: 0 6px 12px rgba(14, 1, 1, 0.15)
+  box-shadow: 0 8px 16px rgba(14, 1, 1, 0.15);
+  border: none;
+  cursor: pointer;
 }
 
-.start-button:hover {
-  background-color: #038a40;
-  transform: translateY(-3px);
+/* hover：浮く */
+.app-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 24px rgba(14, 1, 1, 0.2);
 }
 
-body {
-  background-color: #f3faf6;
+/* active：押し込む */
+.app-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(14, 1, 1, 0.15);
 }
 
+/* 色違いボタン（選択肢用） */
+.app-button.secondary {
+  background-color: #1f7ae0;
+}
+
+/* =========================
+   ボタン配置
+========================= */
+.choice-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+}
+
+/* =========================
+   スマホ対応
+========================= */
+@media (max-width: 640px) {
+  .app-title {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .choice-buttons {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .app-button {
+    width: 100%;
+    font-size: 20px;
+    padding: 22px 0;
+  }
+}

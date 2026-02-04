@@ -1,10 +1,24 @@
-<div class="question-container">
-  <h2 class="question-title">
-    いただいますー！<br>
-    はじめにに箸をつけるのはどっち？
-  </h2>
+<div class="app-bg">
+  <div class="app-container">
+    <h1 class="app-title">
+      理想的な食生活を送るなら🍽️<br>
+      どちらのスタイル？
+    </h1>
 
-  <div class="answer-buttons">
-    <%= link_to "サラダ", "#", class: "answer-button" %>
-    <%= link_to "味噌汁", "#", class: "answer-button" %>
+    <div class="choice-buttons">
+      <!-- 一汁三菜 -->
+      <%= form_with url: answer_health_checks_path, method: :post do %>
+        <%= hidden_field_tag :question, "3" %>
+        <%= hidden_field_tag :choice, "A" %>
+        <%= submit_tag "一汁三菜", class: "app-button" %>
+      <% end %>
+
+      <!-- キン肉マンの食事 -->
+      <%= form_with url: answer_health_checks_path, method: :post do %>
+        <%= hidden_field_tag :question, "3" %>
+        <%= hidden_field_tag :choice, "B" %>
+        <%= submit_tag "プロテイン、鶏胸肉、ブロッコリー", class: "app-button secondary" %>
+      <% end %>
+    </div>
   </div>
+</div>

@@ -1,10 +1,14 @@
-<div class="top-container">
-  <h1>健康意識チェッカー</h1>
+<div class="app-bg">
+  <div class="app-container">
+    <h1 class="app-title">
+      健康意識チェッカー
+    </h1>
 
-  <p class="subtitle">
-    3つの質問に答えるだけで、<br>
-    あなたの健康意識レベルをチェック☑️
-  </p>
+    <p class="mb-12 text-gray-600 text-xl leading-relaxed">
+      3つの質問に答えるだけで、<br>
+      あなたの健康意識レベルをチェック☑️
+    </p>
 
-  <%= link_to "診断を始める", new_health_check_path, class: "start-button" %>
+    <%= link_to "診断を始める", question1_health_checks_path, class: "app-button" %>
+  </div>
 </div>

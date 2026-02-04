@@ -11,19 +11,22 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%# PWA用マニフェスト（必要なら有効化） %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%# Tailwind CSSを正しく読み込む %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <%# JavaScript（Rails 7 + Importmaps / esbuild 前提） %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
+  <body class="bg-[#f5f7f6] min-h-screen font-sans">
+    <%# 全ページ共通の中央配置ラッパーは各ビューで使う %>
     <%= yield %>
   </body>
 </html>

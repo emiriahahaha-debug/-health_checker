@@ -1,10 +1,24 @@
-<div class="question-container">
-  <h2 class="question-title">
-  おやつは何にする？
-  </h2>
+<div class="app-bg">
+  <div class="app-container">
+    <h1 class="app-title">
+      勉強の合間の休憩でおやつタイム🥰<br>
+      どのおやつを選ぶ？
+    </h1>
 
-  <div class="answer-buttons">
-    <%= link_to "カステラ", "#", class: "answer-button" %>
-    <%= link_to "キャラメルポップコーン", "#", class: "answer-button" %>
+    <div class="choice-buttons">
+      <!-- カステラ -->
+      <%= form_with url: answer_health_checks_path, method: :post do %>
+        <%= hidden_field_tag :question, "2" %>
+        <%= hidden_field_tag :choice, "A" %>
+        <%= submit_tag "カステラ", class: "app-button" %>
+      <% end %>
+
+      <!-- キャラメルポップコーン -->
+      <%= form_with url: answer_health_checks_path, method: :post do %>
+        <%= hidden_field_tag :question, "2" %>
+        <%= hidden_field_tag :choice, "B" %>
+        <%= submit_tag "キャラメルポップコーン", class: "app-button secondary" %>
+      <% end %>
+    </div>
   </div>
 </div>
