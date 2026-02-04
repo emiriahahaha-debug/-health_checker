@@ -4,9 +4,9 @@ default: &default
   encoding: unicode
 
   max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: db
-  username: postgres
-  password: password
+  host: health_checker
+  username: health_checker_user
+  password: D6AS0Qs5i9pHkz4OwBraUCgy1kNYOOvF
 
 
 development:
