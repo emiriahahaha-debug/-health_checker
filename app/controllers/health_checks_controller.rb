@@ -11,7 +11,6 @@ class HealthChecksController < ApplicationController
   end
 
   def answer
-    # セッションがなければ作る
     session[:answers] ||= {}
 
     # 質問番号ごとに回答を保存
@@ -26,6 +25,8 @@ class HealthChecksController < ApplicationController
       redirect_to question3_health_checks_path
     when "3"
       redirect_to result_health_checks_path
+    when "4"
+      redirect_to root_path
     end
   end
 
@@ -43,5 +44,7 @@ class HealthChecksController < ApplicationController
       @level = "低"
       @message = "健康意識が冬眠中ですね。春が来るのを気長に待ちましょう🌸"
     end
+    @comment = Comment.new
+    @comments = Comment.order(created_at: :desc).limit(10) 
   end
 end
