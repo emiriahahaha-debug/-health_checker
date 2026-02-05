@@ -45,6 +45,6 @@ class HealthChecksController < ApplicationController
       @message = "健康意識が冬眠中ですね。春が来るのを気長に待ちましょう🌸"
     end
     @comment = Comment.new
-    @comments = Comment.order(created_at: :desc).limit(10) 
+    @comments = Comment.order(created_at: :desc).limit(10)
   end
 end
