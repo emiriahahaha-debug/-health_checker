@@ -1,24 +1,17 @@
-# README
+# 健康意識チェッカー
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サービス概要
+ゆるっと健康意識を診断できるアプリ。
+3つの質問に回答すると、「高・中・低」の3段階で診断結果を表示します。
+結果画面ではコメントを投稿・閲覧できます。（匿名）
 
-Things you may want to cover:
+## 使用技術
+ ・Ruby 3.3.6
+ ・Rails 8.1.2
+ ・Tailwind CSS
 
-* Ruby version
+## 制作期間
+2026.1.31~2.6
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## URL
+https://health-checker-3bhw.onrender.com
