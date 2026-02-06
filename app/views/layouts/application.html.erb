@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="icon" href="/icon.png" type="image/png">
     <title><%= content_for(:title) || "健康意識チェッカー" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <%# --- OGP設定 (X/Twitterで画像を表示させる設定) --- %>
+    <meta property="og:title" content="健康意識チェッカー" />
+    <meta property="og:description" content="3つの質問に答えるだけで、あなたの健康意識レベルをチェック！🥗🏃‍♂️" />
+    <meta property="og:image" content="<%= asset_url('ogp.png') %>" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="<%= asset_url('ogp.png') %>" />
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/icon.png">
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="健康チェッカー">
     <meta name="mobile-web-app-capable" content="yes">
@@ -12,22 +22,11 @@
 
     <%= yield :head %>
 
-    <%# PWA用マニフェスト（必要なら有効化） %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-
-    <%# Tailwind CSSを正しく読み込む %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
-    <%# JavaScript（Rails 7 + Importmaps / esbuild 前提） %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
   <body class="bg-[#f5f7f6] min-h-screen font-sans">
-    <%# 全ページ共通の中央配置ラッパーは各ビューで使う %>
     <%= yield %>
   </body>
 </html>
